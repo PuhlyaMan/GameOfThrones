@@ -1,0 +1,68 @@
+@font-face {
+  font-family: 'Graphik';
+  font-weight: 400;
+  src: url('../assets/fonts/graphik/400.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Graphik';
+  font-weight: 500;
+  src: url('../assets/fonts/graphik/500.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Graphik';
+  font-weight: 600;
+  src: url('../assets/fonts/graphik/600.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'MI';
+  font-weight: 400;
+  src: url('../assets/fonts/mi/400.woff2') format('woff2');
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: var(--fw-base);
+  margin: 0;
+}
+
+h6 {
+  font-size: var(--fs-base);
+}
+
+h5 {
+  font-size: calc(var(--fz-base) * var(--font-scale));
+}
+
+h4 {
+  font-size: calc(var(--fz-base) * pow(var(--font-scale), 2));
+}
+
+h3 {
+  font-size: calc(var(--fz-base) * pow(var(--font-scale), 3));
+}
+
+h2 {
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+
+  @media (--s-vp) {
+    font-size: 1.875rem;
+    line-height: 2rem;
+  }
+}
+
+h1 {
+  font-size: var(--fs-h1);
+  line-height: var(--lh-h1);
+}
+
+p {
+  margin: 0 0 var(--yr-xs);
+}

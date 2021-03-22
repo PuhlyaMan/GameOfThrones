@@ -1,0 +1,29 @@
+{
+  "mount": {
+    "public": "/",
+    "src": "/dist"
+  },
+  "optimize": {
+    "bundle": true,
+    "minify": true,
+    "target": "es2018"
+  },
+  "routes": [{ "match": "routes", "src": ".*", "dest": "/index.html" }],
+  "plugins": [
+    "@snowpack/plugin-typescript",
+    "@snowpack/plugin-dotenv",
+    "@snowpack/plugin-postcss",
+    "snowpack-plugin-svgr",
+    "@snowpack/plugin-webpack"
+  ],
+  "alias": {
+    "@app": "./src",
+    "entities": "./src/entities",
+    "lib": "./src/lib",
+    "components": "./src/components",
+    "pages": "./src/pages"
+  },
+  "devOptions": {
+    "open": "none"
+  }
+}

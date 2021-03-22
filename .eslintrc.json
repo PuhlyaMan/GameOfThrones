@@ -1,0 +1,16 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "plugins": ["@typescript-eslint"],
+  "extends": ["standard-with-typescript", "prettier", "prettier/@typescript-eslint", "plugin:react-hooks/recommended"],
+  "ignorePatterns": ["build/*", "node_modules/*"],
+  "rules": {
+    "@typescript-eslint/strict-boolean-expressions": [
+      "error",
+      { "allowRuleToRunWithoutStrictNullChecksIKnowWhatIAmDoing": true }
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "modules": true,
+  "plugins": {
+    "postcss-custom-media": {
+      "importFrom": "./src/css/custom-media.css"
+    },
+    "postcss-nesting": {},
+    "autoprefixer": {}
+  }
+}

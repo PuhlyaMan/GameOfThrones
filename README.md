@@ -1,2 +1,3 @@
 # GameOfThrones
-Game of thrones wiki 
+
+Game of thrones wiki
