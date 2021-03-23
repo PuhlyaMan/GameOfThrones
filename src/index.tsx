@@ -1,5 +1,6 @@
 import React from 'react'
 import { render } from 'react-dom'
+import { HelmetProvider } from 'react-helmet-async'
 import axios from 'axios'
 import querystring from 'querystring'
 
@@ -12,7 +13,9 @@ axios.defaults.paramsSerializer = (params): string => querystring.stringify(para
 
 render(
   <React.StrictMode>
-    <App />
+    <HelmetProvider>
+      <App />
+    </HelmetProvider>
   </React.StrictMode>,
   document.getElementById('root')
 )

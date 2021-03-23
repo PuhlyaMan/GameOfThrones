@@ -7,19 +7,19 @@ const Header: React.FC = () => {
   return (
     <header className={s.root}>
       <Link to="/" className={s.link}>
-        Домой
+        Home
       </Link>
       <Link to="books" className={s.link}>
-        Книги
+        Books
       </Link>
       <Link to="characters" className={s.link}>
-        Персонажи
+        Characters
       </Link>
       <Link to="houses" className={s.link}>
-        Дома/Семьи
+        Houses
       </Link>
       <Link to="favourites" className={s.link}>
-        Избранное
+        Favourites
       </Link>
     </header>
   )
