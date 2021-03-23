@@ -1,0 +1,20 @@
+.root {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: calc(var(--yr) * 5) calc(var(--yr) * 3);
+}
+
+.link {
+  font-size: var(--fs-bt);
+  line-height: var(--lh-bt);
+  font-weight: var(--fw-semi);
+
+  &:not(:last-child) {
+    margin-right: calc(var(--yr) * 3);
+  }
+}

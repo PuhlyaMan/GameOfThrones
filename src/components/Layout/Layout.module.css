@@ -1,0 +1,25 @@
+.root {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  position: relative;
+  width: 100%;
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  overflow: auto;
+  padding: calc(var(--yr) * 6) calc(var(--yr) * 3);
+
+  &.center {
+    justify-content: center;
+    align-items: center;
+  }
+
+  &.top {
+    padding-top: calc(var(--yr) * 17);
+  }
+}
