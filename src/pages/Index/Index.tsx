@@ -1,10 +1,25 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
+import { useSetRecoilState } from 'recoil'
+
+import { headerState, centerState } from '@app/stores/LayoutStore'
 
 import s from './Index.module.css'
 
 const Index: React.FC = () => {
+  const setHeader = useSetRecoilState(headerState)
+  const setCenter = useSetRecoilState(centerState)
+
+  useEffect(() => {
+    setHeader(false)
+    setCenter(true)
+    return () => {
+      setHeader(true)
+      setCenter(false)
+    }
+  }, [setHeader, setCenter])
+
   return (
     <div className={s.root}>
       <Helmet>
