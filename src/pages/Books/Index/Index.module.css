@@ -1,0 +1,46 @@
+.root {
+  max-width: 56rem;
+  width: 100%;
+  align-self: center;
+}
+
+.title {
+  text-align: center;
+  padding: calc(var(--yr) * 3) 0;
+  margin-bottom: calc(var(--yr) * 5);
+}
+
+.books {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: calc(var(--yr) * 4);
+}
+
+.book {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgb(var(--divider-color));
+  padding: calc(var(--yr) * 4);
+  border-radius: calc(var(--yr) * 2);
+  box-shadow: 0 0 7px rgb(0 0 0 / 30%);
+}
+
+.name {
+  align-self: center;
+  font-size: var(--fs-bt);
+  line-height: var(--lh-bt);
+  font-weight: var(--fw-semi);
+  margin-bottom: calc(var(--yr) * 3);
+}
+
+.item {
+  padding: var(--yr) 0;
+}
+
+.value {
+  padding-left: calc(var(--yr) * 4);
+}
+
+.desc {
+  font-weight: var(--fw-semi);
+}
