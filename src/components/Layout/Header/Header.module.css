@@ -7,6 +7,11 @@
   align-items: center;
   justify-content: center;
   padding: calc(var(--yr) * 5) calc(var(--yr) * 3);
+  background-color: rgb(var(--background-primary-color));
+
+  &.scroll {
+    box-shadow: 0 0 7px rgb(0 0 0 / 30%);
+  }
 }
 
 .link {

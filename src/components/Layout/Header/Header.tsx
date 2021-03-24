@@ -1,11 +1,12 @@
 import React from 'react'
+import cc from 'classcat'
 import { Link } from 'react-router-dom'
 
 import s from './Header.module.css'
 
-const Header: React.FC = () => {
+const Header: React.FC<{ scroll: boolean }> = ({ scroll }) => {
   return (
-    <header className={s.root}>
+    <header className={cc([s.root, { [s.scroll]: scroll }])}>
       <Link to="/" className={s.link}>
         Home
       </Link>
