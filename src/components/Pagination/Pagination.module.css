@@ -1,0 +1,29 @@
+.root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: calc(var(--yr) * 2);
+  padding: calc(var(--yr) * 2);
+  background-color: rgb(var(--background-primary-color));
+}
+
+.page {
+  display: grid;
+  place-items: center;
+  width: calc(var(--yr) * 8);
+  height: calc(var(--yr) * 8);
+  list-style-type: none;
+  cursor: pointer;
+  font-size: var(--fs-at);
+  line-height: var(--lh-at);
+  border: 1px solid rgb(var(--divider-color));
+
+  &.active {
+    box-shadow: 0 0 7px rgb(77 77 77 / 30%);
+  }
+
+  &.disabled {
+    pointer-events: none;
+    opacity: 0.4;
+  }
+}

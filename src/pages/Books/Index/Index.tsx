@@ -1,24 +1,16 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { Helmet } from 'react-helmet-async'
-import axios from 'axios'
 import { Link } from 'react-router-dom'
+import { useRecoilValue } from 'recoil'
 
-import Book from 'entities/book'
+import { currentData } from '@app/stores/PaginateStore'
+
+import { Pagination } from '@app/components'
 
 import s from './Index.module.css'
 
 const Index: React.FC = () => {
-  const [books, setBooks] = useState<Book[]>()
-
-  useEffect(() => {
-    const getBooks = async (): Promise<void> => {
-      const { data } = await axios.get<Book[]>('/books')
-      console.log(data)
-      setBooks(data)
-    }
-
-    getBooks().catch((e) => console.error(e))
-  }, [])
+  const currentBooks = useRecoilValue(currentData)
 
   return (
     <div className={s.root}>
@@ -32,9 +24,9 @@ const Index: React.FC = () => {
 
       <div className={s.constrols}></div>
 
-      {books && (
+      {currentBooks != null && (
         <div className={s.books}>
-          {books.map((book, index) => {
+          {currentBooks.map((book, index) => {
             return (
               <Link to={(index + 1).toString()} key={book.isbn} className={s.book}>
                 <div className={s.name}>{book.name}</div>
@@ -59,6 +51,7 @@ const Index: React.FC = () => {
           })}
         </div>
       )}
+      <Pagination to="books" />
     </div>
   )
 }

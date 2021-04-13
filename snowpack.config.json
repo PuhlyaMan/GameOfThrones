@@ -21,7 +21,8 @@
     "entities": "./src/entities",
     "lib": "./src/lib",
     "components": "./src/components",
-    "pages": "./src/pages"
+    "pages": "./src/pages",
+    "hooks": "./src/hooks"
   },
   "devOptions": {
     "open": "none"

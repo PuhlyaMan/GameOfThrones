@@ -21,7 +21,8 @@
       "entities/*": ["src/entities/*"],
       "components/*": ["src/components/*"],
       "pages/*": ["src/pages/*"],
-      "lib/*": ["src/lib/*"]
+      "lib/*": ["src/lib/*"],
+      "hooks/*": ["src/hooks/*"]
     }
   },
   "include": ["src", "types"]
