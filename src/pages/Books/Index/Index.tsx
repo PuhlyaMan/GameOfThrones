@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet-async'
 import { Link } from 'react-router-dom'
 import { useRecoilValue } from 'recoil'
 
-import { currentData } from '@app/stores/PaginateStore'
+import { currentData, totalData } from '@app/stores/BooksStore'
 
 import { Pagination } from '@app/components'
 
@@ -11,6 +11,7 @@ import s from './Index.module.css'
 
 const Index: React.FC = () => {
   const currentBooks = useRecoilValue(currentData)
+  const tD = useRecoilValue(totalData)
 
   return (
     <div className={s.root}>
@@ -51,7 +52,7 @@ const Index: React.FC = () => {
           })}
         </div>
       )}
-      <Pagination to="books" />
+      {currentBooks != null && <Pagination to="books" tD={tD} />}
     </div>
   )
 }
