@@ -13,16 +13,20 @@
     "format:check": "prettier -c ."
   },
   "dependencies": {
+    "@types/redux-logger": "^3.0.8",
     "axios": "^0.21.1",
     "classcat": "^5.0.3",
     "history": "^5.0.0",
-    "mobx": "^6.1.8",
-    "mobx-react-lite": "^3.2.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet-async": "^1.0.9",
+    "react-redux": "^7.2.3",
     "react-router-dom": "6.0.0-beta.0",
-    "recoil": "^0.1.3"
+    "recoil": "^0.1.3",
+    "redux": "^4.0.5",
+    "redux-devtools-extension": "^2.13.9",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
     "@snowpack/plugin-dotenv": "^2.0.5",

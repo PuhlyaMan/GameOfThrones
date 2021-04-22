@@ -1,17 +1,18 @@
 import React, { useState } from 'react'
 import cc from 'classcat'
-import { useRecoilValue } from 'recoil'
-
-import { headerState, centerState } from '@app/stores/LayoutStore'
+import { connect } from 'react-redux'
 
 import Header from './Header/Header'
 
 import s from './Layout.module.css'
 
-const Layout: React.FC = ({ children }) => {
+interface LayoutProps {
+  header: boolean
+  center: boolean
+}
+
+const Layout: React.FC<LayoutProps> = ({ children, header, center }) => {
   const [scroll, setScroll] = useState(false)
-  const header = useRecoilValue(headerState)
-  const center = useRecoilValue(centerState)
 
   const handleScroll = (e: React.UIEvent<HTMLElement, UIEvent>): void => {
     if ((e.target as Element).scrollTop > 0) {
@@ -31,4 +32,11 @@ const Layout: React.FC = ({ children }) => {
   )
 }
 
-export default Layout
+const mapStateToProps = ({ layout }: { layout: { header: boolean; center: boolean } }): LayoutProps => {
+  return {
+    header: layout.header,
+    center: layout.center,
+  }
+}
+
+export default connect(mapStateToProps)(Layout)

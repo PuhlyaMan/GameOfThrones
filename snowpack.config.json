@@ -22,7 +22,8 @@
     "lib": "./src/lib",
     "components": "./src/components",
     "pages": "./src/pages",
-    "hooks": "./src/hooks"
+    "hooks": "./src/hooks",
+    "store": "./src/store"
   },
   "devOptions": {
     "open": "none"
