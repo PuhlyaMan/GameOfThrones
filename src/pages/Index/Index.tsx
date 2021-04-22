@@ -1,22 +1,21 @@
 import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
-import { connect } from 'react-redux'
-import { setLayout, ActionLayout } from '@app/redux/actionCreater'
+
+import { useAppDispatch } from 'hooks/redux'
+import { setLayout } from '@app/redux/layoutSlice'
 
 import s from './Index.module.css'
 
-interface IndexProps {
-  setLayout: ({ header, center }: { header: boolean; center: boolean }) => ActionLayout
-}
+const Index: React.FC = () => {
+  const dispatch = useAppDispatch()
 
-const Index: React.FC<IndexProps> = ({ setLayout }) => {
   useEffect(() => {
-    setLayout({ header: false, center: true })
+    dispatch(setLayout({ header: false, center: true }))
     return () => {
-      setLayout({ header: true, center: false })
+      dispatch(setLayout({ header: true, center: false }))
     }
-  }, [setLayout])
+  }, [dispatch])
 
   return (
     <div className={s.root}>
@@ -39,8 +38,4 @@ const Index: React.FC<IndexProps> = ({ setLayout }) => {
   )
 }
 
-const mapDispatchToProps = {
-  setLayout,
-}
-
-export default connect(null, mapDispatchToProps)(Index)
+export default Index

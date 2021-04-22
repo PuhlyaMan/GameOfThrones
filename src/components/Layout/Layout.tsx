@@ -1,18 +1,15 @@
 import React, { useState } from 'react'
 import cc from 'classcat'
-import { connect } from 'react-redux'
+
+import { useAppSelector } from 'hooks/redux'
 
 import Header from './Header/Header'
 
 import s from './Layout.module.css'
 
-interface LayoutProps {
-  header: boolean
-  center: boolean
-}
-
-const Layout: React.FC<LayoutProps> = ({ children, header, center }) => {
+const Layout: React.FC = ({ children }) => {
   const [scroll, setScroll] = useState(false)
+  const { header, center } = useAppSelector((state) => state)
 
   const handleScroll = (e: React.UIEvent<HTMLElement, UIEvent>): void => {
     if ((e.target as Element).scrollTop > 0) {
@@ -32,11 +29,4 @@ const Layout: React.FC<LayoutProps> = ({ children, header, center }) => {
   )
 }
 
-const mapStateToProps = ({ layout }: { layout: { header: boolean; center: boolean } }): LayoutProps => {
-  return {
-    header: layout.header,
-    center: layout.center,
-  }
-}
-
-export default connect(mapStateToProps)(Layout)
+export default Layout
