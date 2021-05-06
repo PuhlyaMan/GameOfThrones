@@ -1,9 +1,9 @@
 import React, { useMemo, useCallback } from 'react'
 import cc from 'classcat'
 import { Link } from 'react-router-dom'
-import { useRecoilState, useRecoilValue } from 'recoil'
 
-import { pageSize, currentPage } from '@app/stores/PaginateStore'
+import { setCurrentPage } from '@app/redux/paginateSlice'
+import { useAppDispatch, useAppSelector } from 'hooks/redux'
 
 import s from './Pagination.module.css'
 
@@ -13,8 +13,8 @@ interface PaginationProps {
 }
 
 const Pagination: React.FC<PaginationProps> = ({ to, tD }: PaginationProps) => {
-  const pS = useRecoilValue(pageSize)
-  const [cP, setCurrentPage] = useRecoilState(currentPage)
+  const { currentPage: cP, pageSize: pS } = useAppSelector((state) => state.paginate)
+  const dispatch = useAppDispatch()
 
   const pageNumbers = useMemo(() => Array.from({ length: Math.ceil(tD / pS) }, (_, k) => k + 1), [tD, pS])
   const disableLeft = useMemo(() => cP === 1, [cP])
@@ -22,9 +22,9 @@ const Pagination: React.FC<PaginationProps> = ({ to, tD }: PaginationProps) => {
 
   const handleClick = useCallback(
     (curr: number) => (): void => {
-      setCurrentPage(curr)
+      dispatch(setCurrentPage(curr))
     },
-    [setCurrentPage]
+    [dispatch]
   )
 
   return (

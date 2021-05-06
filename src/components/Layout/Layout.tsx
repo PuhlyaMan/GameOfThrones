@@ -9,7 +9,7 @@ import s from './Layout.module.css'
 
 const Layout: React.FC = ({ children }) => {
   const [scroll, setScroll] = useState(false)
-  const { header, center } = useAppSelector((state) => state)
+  const { header, center } = useAppSelector((state) => state.layout)
 
   const handleScroll = (e: React.UIEvent<HTMLElement, UIEvent>): void => {
     if ((e.target as Element).scrollTop > 0) {

@@ -25,6 +25,6 @@ const layoutSlice = createSlice({
 
 export const { setLayout } = layoutSlice.actions
 
-export const layout = (state: RootState): LayoutState => state
+export const layout = (state: RootState): LayoutState => state.layout
 
 export default layoutSlice
